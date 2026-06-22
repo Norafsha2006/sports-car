@@ -1,0 +1,867 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+html{
+    scroll-behavior:smooth;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#000;
+}
+
+nav h1{
+    color:red;
+    font-size:2rem;
+
+    text-shadow:
+    0 0 10px red,
+    0 0 20px red;
+
+    animation:glow 2s infinite alternate;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Hero Section */
+
+
+.hero h2{
+    font-size:4.5rem;
+    max-width:1200px;
+    padding:0 20px;
+}
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:red;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:1rem;
+    transition:0.3s;
+}
+.hero button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px red;
+}
+.featured-cars{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.featured-cars h2{
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.car-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.car-card{
+    width:300px;
+    background:#181818;
+    border-radius:20px;
+    overflow:hidden;
+    transition:all 0.4s ease;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(255,0,0,0.15);
+}
+
+.car-card:hover{
+    transform:translateY(-15px) scale(1.05);
+    box-shadow:0 0 30px rgba(255,0,0,0.5);
+}
+.car-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.car-card h3{
+    margin:15px 0;
+}
+
+.car-card p{
+    margin-bottom:20px;
+}
+.car-card button{
+    margin-bottom:20px;
+    padding:10px 20px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+.price{
+    color:red;
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+.search-section{
+    margin-bottom:40px;
+}
+
+.search-section input{
+    width:300px;
+    max-width:90%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+}
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .hero h2{
+        font-size:2.5rem;
+    }
+
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+
+    justify-content:center;
+    align-items:center;
+}
+
+
+.modal-content{
+    background:#151515;
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:550px;
+    text-align:center;
+    border:1px solid rgba(255,0,0,0.4);
+    box-shadow:0 0 40px rgba(255,0,0,0.3);
+     position:relative;
+}
+
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:2rem;
+    cursor:pointer;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h2{
+        font-size:2.5rem;
+    }
+
+    .hero p{
+        padding:0 20px;
+    }
+
+    .car-card{
+        width:90%;
+    }
+
+}
+.contact{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:3rem;
+    margin-bottom:30px;
+}
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+.explore-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:red;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.explore-btn:hover{
+    transform:scale(1.05);
+}
+footer{
+    text-align:center;
+    padding:25px;
+    background:#000;
+    margin-top:50px;
+}
+
+footer p{
+    color:#aaa;
+}
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+@media(max-width:768px){
+
+    nav{
+    flex-direction:column;
+    gap:15px;
+}
+.gallery h2{
+    font-size:2.2rem;
+}
+.menu-toggle{
+    display:block;
+}
+
+nav ul{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+}
+
+nav ul.active{
+    display:flex;
+}
+
+    .hero h2{
+        font-size:2.2rem;
+        padding:0 15px;
+    }
+
+    .car-card{
+        width:95%;
+    }
+
+    .contact h2{
+        font-size:2.2rem;
+    }
+    .about h2{
+    font-size:2.2rem;
+}
+
+.about p{
+    font-size:1rem;
+}
+.about-container{
+    flex-direction:column;
+}
+
+.about-content{
+    text-align:center;
+}
+
+}
+.compare-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.compare-section h2{
+    font-size:3rem;
+    margin-bottom:30px;
+}
+
+.compare-section select,
+.compare-section button{
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.compare-section button{
+    background:red;
+    color:white;
+    cursor:pointer;
+}
+
+#comparisonResult{
+    margin-top:30px;
+    font-size:1.1rem;
+}
+.about{
+    padding:100px 20px;
+    text-align:center;
+    background:#111;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.about h2{
+    font-size:3rem;
+    margin-bottom:25px;
+}
+
+.about p{
+    font-size:1.1rem;
+    line-height:1.8;
+    color:#ddd;
+    margin-bottom:20px;
+}
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.about-image img{
+    width:450px;
+    max-width:100%;
+    border-radius:20px;
+}
+
+.about-content{
+    flex:1;
+    text-align:left;
+}
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:60px 20px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    background:#1a1a1a;
+    padding:30px;
+    width:220px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,0,0,0.2);
+}
+
+.stat-box h3{
+    color:red;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+.hero h2{
+    animation:fadeUp 1s ease;
+}
+
+.hero p{
+    animation:fadeUp 1.5s ease;
+}
+
+.hero button,
+.explore-btn{
+    animation:fadeUp 2s ease;
+}
+nav h1{
+    animation:pulse 2s infinite;
+}
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+@keyframes heroZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+
+}
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px red;
+    }
+
+    to{
+        text-shadow:
+        0 0 30px red,
+        0 0 50px red;
+    }
+
+}
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:red;
+    z-index:9999;
+    transition:width 0.1s;
+}
+.gallery{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.gallery-container img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px rgba(255,0,0,0.5);
+}
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-content h2{
+    font-size:5rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+#loader h1{
+    color:red;
+    font-size:4rem;
+
+    animation:pulse 1.5s infinite;
+}
+.nav-btn{
+    background:red;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 15px red;
+}
+@media(max-width:768px){
+
+    .hero-content h2{
+        font-size:2.5rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+}
+@media(max-width:768px){
+
+    nav h1{
+        font-size:1.6rem;
+    }
+
+}
+@media(max-width:768px){
+
+    .compare-section select,
+    .compare-section button{
+        width:90%;
+        max-width:300px;
+    }
+
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+
+}
+/* MOBILE FIX */
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav ul{
+        width:100%;
+        text-align:center;
+    }
+
+    .nav-btn{
+        width:90%;
+        text-align:center;
+        margin-top:10px;
+    }
+
+    .hero-content{
+        padding:0 20px;
+    }
+
+    .hero-content h2{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .featured-cars{
+        padding:60px 15px;
+    }
+
+    .car-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .car-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .about-container{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .about-image img{
+        width:100%;
+    }
+
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .stat-box{
+        width:90%;
+        max-width:300px;
+    }
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-container img{
+        height:220px;
+    }
+
+    .contact form{
+        width:100%;
+    }
+
+    .contact input,
+    .contact textarea{
+        width:100%;
+    }
+
+    .compare-section select{
+        width:90%;
+    }
+}
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+.modal-content{
+    animation:popup 0.3s ease;
+}
+#modalImage{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+#modalImage{
+    width:100%;
+    max-width:350px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.modal-content{
+    animation:popup 0.3s ease;
+}
+.testimonials{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.testimonials h2{
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.testimonial-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.testimonial-card{
+    width:320px;
+    background:#181818;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,0,0,0.15);
+    transition:0.4s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,0,0,0.4);
+}
+
+.testimonial-card p{
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.testimonial-card h4{
+    color:red;
+}
+@media(max-width:768px){
+
+    .testimonial-card{
+        width:95%;
+    }
+
+    .testimonials h2{
+        font-size:2.2rem;
+    }
+
+}
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    background:red;
+    color:white;
+
+    border:none;
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+    cursor:pointer;
+
+    display:none;
+
+    font-size:1.5rem;
+
+    z-index:9999;
+
+    box-shadow:0 0 15px rgba(255,0,0,0.5);
+}
+
+#topBtn:hover{
+    transform:scale(1.1);
+}

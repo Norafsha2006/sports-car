@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Velocity Garage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader">
+    <h1>Velocity Garage</h1>
+</div>
+<div id="progress-bar"></div>
+<nav>
+    <h1>Velocity Garage</h1>
+    <div class="menu-toggle">
+    ☰
+    </div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+       <li><a href="#cars">Cars</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="#contact">Contact</a></li>
+    </ul>
+  <a href="#contact" class="nav-btn">
+    Book Test Drive
+</a>
+</nav>
+
+<section class="hero">
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="car-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h2>Experience Pure Speed</h2>
+
+        <p>
+            Explore the world's most powerful sports cars.
+        </p>
+
+        <a href="#cars" class="explore-btn">
+            Explore Cars
+        </a>
+    </div>
+
+</section>
+<section class="featured-cars hidden" id="cars">
+    <section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search cars..."
+    >
+
+</section>
+    <h2>Featured Cars</h2>
+
+    <div class="car-container">
+
+   
+
+        
+
+    
+
+  <div class="car-card" data-name="ferrari">
+    <img src="ferrari.jpg" alt="Ferrari">
+    <h3>Ferrari SF90</h3>
+    <p>Top Speed: 340 km/h</p>
+    <p>986 HP</p>
+    <p class="price">₹7.50 Cr</p>
+    <button class="details-btn">
+    View Details
+    </button>
+  </div>
+
+<div class="car-card" data-name="lamborghini">
+    <img src="lamborghini.jpg" alt="Lamborghini">
+    <h3>Lamborghini Huracan</h3>
+    <p>Top Speed: 325 km/h</p>
+    <p>631 HP</p>
+    <p class="price">₹4.00 Cr</p>
+    <button class="details-btn">
+    View Details
+    </button>
+</div>
+
+<div class="car-card" data-name="porsche">
+    <img src="porsche.jpg" alt="Porsche">
+    <h3>Porsche 911 Turbo S</h3>
+    <p>Top Speed: 330 km/h</p>
+    <p>640 HP</p>
+    <p class="price">₹3.50 Cr</p>
+    <button class="details-btn">
+    View Details
+    </button>
+</div>
+
+    </div>
+</section>
+<section class="compare-section hidden">
+
+    <h2>Compare Cars</h2>
+
+    <select id="car1">
+        <option value="Ferrari">Ferrari SF90</option>
+        <option value="Lamborghini">Lamborghini Huracan</option>
+        <option value="Porsche">Porsche 911 Turbo S</option>
+    </select>
+
+    <select id="car2">
+        <option value="Ferrari">Ferrari SF90</option>
+        <option value="Lamborghini">Lamborghini Huracan</option>
+        <option value="Porsche">Porsche 911 Turbo S</option>
+    </select>
+
+    <button id="compareBtn">
+        Compare
+    </button>
+
+    <div id="comparisonResult"></div>
+
+</section>
+<section class="about hidden" id="about">
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="ferrari.jpg" alt="Sports Car">
+        </div>
+
+        <div class="about-content">
+            <h2>About Velocity Garage</h2>
+
+            <p>
+                Velocity Garage is a premium destination for sports car enthusiasts.
+                We showcase the world's most iconic supercars, including Ferrari,
+                Lamborghini, and Porsche.
+            </p>
+
+            <p>
+                Our passion is bringing together speed, luxury, performance,
+                and automotive innovation in one place.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stats">
+
+    <div class="stat-box">
+       <h3 id="carsCount">0</h3>
+
+        <p>Cars Featured</p>
+    </div>
+
+    <div class="stat-box">
+        <h3 id="brandsCount">0</h3>
+        <p>Brands</p>
+    </div>
+
+    <div class="stat-box">
+        <h3 id="visitorsCount">0</h3>
+        <p>Visitors</p>
+    </div>
+
+</section>
+<section class="gallery">
+
+    <h2>Supercar Gallery</h2>
+
+    <div class="gallery-container">
+
+        <img src="ferrari.jpg" alt="Ferrari">
+
+        <img src="lamborghini.jpg" alt="Lamborghini">
+
+        <img src="porsche.jpg" alt="Porsche">
+
+        <img src="mclaren.jpg" alt="McLaren">
+
+    </div>
+
+</section>
+<section class="testimonials hidden">
+
+    <h2>What Our Customers Say</h2>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card">
+            <p>
+                "Amazing collection of supercars. The Ferrari SF90 is a dream!"
+            </p>
+            <h4>- Rahul Sharma</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>
+                "Beautiful design and easy comparison feature."
+            </p>
+            <h4>- Priya Patel</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>
+                "Best supercar showcase website I've visited."
+            </p>
+            <h4>- Arjun Mehta</h4>
+        </div>
+
+    </div>
+
+</section>
+<section class="contact hidden" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <form>
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <textarea
+            placeholder="Your Message"
+            rows="5"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+<footer>
+    <p>© 2026 Velocity Garage | Built by Afsha</p>
+</footer>
+<div class="modal" id="carModal">
+
+    <div class="modal-content">
+
+        <span class="close-btn">&times;</span>
+
+        <img id="modalImage" src="" alt="Car Image">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalSpeed"></p>
+        <p id="modalHp"></p>
+        <p id="modalPrice"></p>
+
+    </div>
+
+</div>
+<button id="topBtn">
+    ↑
+</button>
+<script src="script.js"></script>
+</body>
+</html>
